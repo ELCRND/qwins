@@ -1,0 +1,44 @@
+.card {
+  width: 100%;
+  padding: rem(40) rem(40) rem(38) rem(40);
+  border-radius: var(--border-r-m);
+  background: linear-gradient(135deg, #0d1419 45%, rgba(19, 128, 206, 0.11));
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.title {
+  margin-bottom: rem(36);
+  font-weight: 600;
+  font-size: rem(36);
+  line-height: 110%;
+  color: var(--color-white);
+  position: relative;
+  z-index: 1;
+}
+
+.description {
+  max-width: rem(340);
+  margin-bottom: rem(57);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+.link {
+  width: rem(243);
+  height: rem(42);
+  position: relative;
+  z-index: 1;
+}
+
+.image {
+  img {
+    user-select: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+}

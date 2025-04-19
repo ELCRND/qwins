@@ -1,0 +1,69 @@
+.hero {
+  padding-top: rem(208);
+  padding-bottom: rem(40);
+}
+
+.container {
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    max-width: 640px;
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+    background-color: rgba(19, 128, 206, 0.12);
+    position: absolute;
+    z-index: -1;
+    filter: blur(200px);
+    translate: -20% -20%;
+  }
+
+  .image {
+    position: absolute;
+    top: rem(-164);
+    right: rem(125);
+
+    &::before {
+      content: "";
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 1 / 1.1;
+      border-radius: 100%;
+      background-color: rgba(19, 128, 206, 0.3);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -20% -30%;
+      z-index: 0;
+      filter: blur(200px);
+    }
+  }
+}
+
+.title {
+  max-width: rem(450);
+  margin-bottom: rem(16);
+  font-weight: 600;
+  font-size: rem(48);
+  line-height: 110%;
+  color: #f4f4f4;
+}
+
+.description {
+  max-width: rem(460);
+  margin-bottom: rem(36);
+  font-weight: 400;
+  font-size: rem(13);
+}
+
+.button {
+  width: rem(311);
+  height: rem(42);
+  margin-bottom: rem(136);
+}
+
+.features {
+  display: flex;
+  gap: rem(20);
+}

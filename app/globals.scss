@@ -1,0 +1,91 @@
+:root {
+  --font-family: "Open Sans", sans-serif;
+
+  --color-white: #fff;
+  --color-blue: #0082fb;
+  --color-blue-hover: #309bff;
+  --color-gray: #425561;
+
+  --main-text: #88b0c9;
+
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --border-r-s: 10px;
+  --border-r-m: 15px;
+  --border-r-l: 55px;
+
+  --container-width: #{rem(1180)};
+  --container-padding-x: #{rem(16)};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+
+  @media (min-width: 1920px) {
+    font-size: calc(16px + 0.625 * (100vw - 1920px) / 100);
+  }
+}
+
+body {
+  color: var(--main-text);
+  background: #0a0d10;
+  font-family: var(--font-family);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+img {
+  user-select: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.regular-button {
+  @include flex-center;
+  border-radius: var(--border-r-s);
+  background-color: var(--color-blue);
+  box-shadow: 0 0 17px 0 rgba(48, 155, 255, 0.46);
+  color: var(--color-white);
+  font-weight: 400;
+  font-size: 13px;
+
+  @include hover {
+    background-color: var(--color-blue-hover);
+    box-shadow: 0 0 22px 0 rgba(48, 155, 255, 0.46);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

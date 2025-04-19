@@ -1,0 +1,88 @@
+.container {
+  width: min(rem(160), 100%);
+  height: rem(195);
+  padding-top: rem(10);
+  backdrop-filter: blur(10px);
+  background: rgba(15, 22, 28, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: rem(20);
+  border-radius: var(--border-r-m);
+  transition: 0.2s all ease-in-out;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    width: 100%;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50% -55%;
+    background: radial-gradient(
+      ellipse farthest-corner at 50% 50%,
+      rgba(0, 130, 251, 0.3) 0%,
+      rgba(0, 130, 251, 0.01) 100%
+    );
+    filter: blur(20px);
+  }
+
+  p {
+    max-width: rem(129);
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    text-align: center;
+    color: var(--color-gray);
+    transition: 0.2s;
+  }
+
+  svg {
+    transition: 0.2s;
+  }
+
+  &:hover {
+    width: min(rem(180), 100%);
+    height: rem(220);
+
+    &::before {
+      aspect-ratio: 1 / 1;
+    }
+
+    svg path {
+      fill: var(--color-blue);
+    }
+
+    p {
+      max-width: rem(150);
+      color: var(--color-blue);
+      font-size: rem(16);
+    }
+  }
+}
+
+.active {
+  width: min(rem(180), 100%);
+  height: rem(220);
+
+  &::before {
+    aspect-ratio: 1 / 1;
+  }
+
+  svg path {
+    fill: var(--color-blue-hover);
+  }
+
+  p {
+    max-width: rem(140);
+    color: var(--color-blue-hover);
+    font-size: rem(16);
+  }
+}
