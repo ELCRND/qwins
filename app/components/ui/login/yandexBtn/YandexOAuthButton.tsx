@@ -1,8 +1,11 @@
 import styles from "./yandexOAuthButton.module.scss";
 
-export default function YandexOAuthButton() {
+export default function YandexOAuthButton({
+  isDisabled,
+}: {
+  isDisabled: boolean;
+}) {
   const handleClick = () => {
-    // Здесь будет логика авторизации через Яндекс
     window.location.href = `${process.env.NEXT_PUBLIC_SERVER_URL}/oauth/yandex`;
   };
 
@@ -11,6 +14,7 @@ export default function YandexOAuthButton() {
       className={`${styles.oauthButton} ${styles.yandex}`}
       onClick={handleClick}
       type="button"
+      disabled={isDisabled}
     >
       Войти через Яндекс
     </button>

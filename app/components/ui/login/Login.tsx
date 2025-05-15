@@ -29,8 +29,9 @@ const registerSchema = loginSchema
   });
 
 export default function Login() {
+  const [isLoading, setIsLoading] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
-  const { isLoading, login, register } = useAuth();
+  const { login, register } = useAuth();
 
   const {
     register: registerForm,
@@ -44,9 +45,14 @@ export default function Login() {
   const onSubmit = async (data: AuthRequestType) => {
     if (isLoading) return;
 
-    isLogin ? await login(data) : await register(data);
-
-    reset();
+    try {
+      setIsLoading(true);
+      isLogin ? await login(data) : await register(data);
+      setIsLoading(false);
+      reset();
+    } catch (e) {
+      setIsLoading(false);
+    }
   };
 
   const toggleAuthMode = () => {
@@ -123,8 +129,8 @@ export default function Login() {
           <div className={styles.divider}>или</div>
 
           <div className={styles.oauthButtons}>
-            <GoogleOAuthButton />
-            <YandexOAuthButton />
+            <GoogleOAuthButton isDisabled={isLoading} />
+            <YandexOAuthButton isDisabled={isLoading} />
           </div>
 
           <div className={styles.togglerForm}>

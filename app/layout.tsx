@@ -12,6 +12,7 @@ const OpenSansFont = Open_Sans({
   variable: "--open-sans-font",
   weight: "variable",
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {

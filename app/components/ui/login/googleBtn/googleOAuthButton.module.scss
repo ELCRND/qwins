@@ -22,6 +22,10 @@
     &:hover {
       background-color: #3367d6;
     }
+
+    &:disabled {
+      opacity: 0.5;
+    }
   }
 
   &.yandex {
@@ -30,6 +34,10 @@
 
     &:hover {
       background-color: #e03615;
+    }
+
+    &:disabled {
+      opacity: 0.5;
     }
   }
 }

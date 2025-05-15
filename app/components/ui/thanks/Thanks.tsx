@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 
 import { ordersService } from "@/app/services/orders";
@@ -9,7 +9,6 @@ import styles from "./thanks.module.scss";
 import Link from "next/link";
 
 const Thanks = () => {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const order = searchParams.get("order") || "";
 

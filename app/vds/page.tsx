@@ -8,6 +8,7 @@ import Servers from "../components/ui/common/servers/Servers";
 import SupportBanner from "../components/ui/common/supportBanner/SupportBanner";
 
 import { ProductsType } from "../types";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "VDS",
@@ -40,7 +41,9 @@ export default async function VpsPage() {
       <Header />
       <VdsBanner />
       <VdsAdvant />
-      <Servers products={products.slice()} />
+      <Suspense>
+        <Servers products={products.slice()} />
+      </Suspense>
       <SupportBanner />
       <Footer />
     </>
