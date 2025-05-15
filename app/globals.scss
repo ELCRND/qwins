@@ -8,8 +8,21 @@
 
   --main-text: #88b0c9;
 
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b1014;
+  --reviews-bg: linear-gradient(
+      225deg,
+      rgba(12, 25, 34, 0.9) 0%,
+      rgba(13, 20, 25, 0.9) 48.08%,
+      rgba(12, 25, 34, 0.9) 100%
+    ),
+    linear-gradient(
+      225deg,
+      rgba(13, 20, 25, 0.9) 0%,
+      rgba(12, 25, 34, 0.9) 49.52%,
+      rgba(13, 20, 25, 0.9) 99.04%
+    );
+  --faq-bg: #0b1014;
+  --faq-wrap-bg: #090d10;
 
   --border-r-s: 10px;
   --border-r-m: 15px;
@@ -19,18 +32,19 @@
   --container-padding-x: #{rem(16)};
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.light {
+  --main-text: #fff;
+
+  --background: #2d3947;
+  --reviews-bg: var(--background);
+  --faq-bg: var(--background);
+  --faq-wrap-bg: #1b222b;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-
   @media (min-width: 1920px) {
     font-size: calc(16px + 0.625 * (100vw - 1920px) / 100);
   }
@@ -38,7 +52,7 @@ body {
 
 body {
   color: var(--main-text);
-  background: #0a0d10;
+  background: var(--background);
   font-family: var(--font-family);
 }
 
@@ -60,6 +74,11 @@ a {
   transition: all 0.2s ease;
 }
 
+button,
+select {
+  border: none;
+}
+
 img {
   user-select: none;
 }
@@ -77,6 +96,7 @@ ol {
   color: var(--color-white);
   font-weight: 400;
   font-size: 13px;
+  cursor: pointer;
 
   @include hover {
     background-color: var(--color-blue-hover);

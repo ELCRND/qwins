@@ -1,0 +1,37 @@
+.container {
+  position: relative;
+}
+
+.btn {
+  @include flex-center;
+  width: rem(44);
+  height: rem(40);
+  border-radius: var(--border-r-s);
+  background: #182833;
+  cursor: pointer;
+}
+
+.list {
+  width: 100%;
+  height: 0;
+  border-radius: var(--border-r-s);
+  background: #182833;
+  overflow: hidden;
+  display: grid;
+  gap: rem(4);
+  justify-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  translate: 0 105%;
+  z-index: 1;
+
+  svg {
+    cursor: pointer;
+  }
+
+  &.open {
+    height: auto;
+    padding: rem(6) rem(10);
+  }
+}

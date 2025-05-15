@@ -1,0 +1,22 @@
+.wrap {
+  min-height: rem(342);
+  margin-bottom: rem(41);
+  border-radius: 0 0 25px 25px;
+  background: #0d141a;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    width: rem(437);
+    height: rem(421);
+    border-radius: 100%;
+    background-color: var(--color-blue);
+    opacity: 0.65;
+    filter: blur(200px);
+    position: absolute;
+    bottom: -44%;
+    left: -20%;
+    z-index: 0;
+  }
+}

@@ -1,0 +1,18 @@
+.title {
+  max-width: rem(580);
+  margin-top: rem(137);
+  margin-left: rem(100);
+  font-weight: 600;
+  font-size: rem(48);
+  line-height: 110%;
+  color: var(--color-white);
+  position: relative;
+  z-index: 2;
+}
+
+.img {
+  position: absolute;
+  bottom: 0;
+  right: rem(109);
+  z-index: 1;
+}

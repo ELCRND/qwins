@@ -1,0 +1,7 @@
+.btn {
+  @include flex-center;
+  width: rem(44);
+  height: rem(40);
+  border-radius: var(--border-r-s);
+  background-color: #182833;
+}

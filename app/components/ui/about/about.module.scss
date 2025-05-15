@@ -1,8 +1,7 @@
 .about {
-  padding-top: rem(80);
+  padding-top: rem(81);
   padding-bottom: rem(80);
   position: relative;
-  overflow: hidden;
 
   &::before {
     content: "";
@@ -11,7 +10,7 @@
     border-radius: 100%;
     background: radial-gradient(
       ellipse farthest-corner at 50% 50%,
-      rgba(19, 128, 206, 0.2) 0%,
+      rgba(19, 128, 206, 0.16) 0%,
       rgba(19, 128, 206, 0.02) 100%
     );
     filter: blur(200px);
@@ -28,7 +27,7 @@
 }
 
 .title {
-  margin-bottom: rem(40);
+  margin-bottom: rem(39);
   font-weight: 600;
   font-size: rem(48);
   line-height: 110%;
@@ -43,19 +42,21 @@
   justify-content: center;
   align-items: center;
   gap: rem(20);
+  position: relative;
+  z-index: 1;
 }
 
 .decorationTop {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: -1;
+  z-index: 0;
   translate: 42.4% 14%;
 }
 .decorationBottom {
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: 1;
   translate: -50.8% 38.5%;
 }

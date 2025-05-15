@@ -1,0 +1,35 @@
+.grid {
+  > div {
+    gap: 20px !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #182631;
+    border-radius: rem(10);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-blue);
+  }
+
+  &::-webkit-scrollbar {
+    width: rem(5);
+  }
+
+  &::-moz-scrollbar-thumb {
+    background: #182631;
+    border-radius: rem(10);
+  }
+
+  &::-moz-scrollbar-thumb:hover {
+    background: var(--color-blue);
+  }
+
+  &::-moz-scrollbar {
+    width: rem(5);
+  }
+}
+
+.item {
+  width: fit-content;
+}

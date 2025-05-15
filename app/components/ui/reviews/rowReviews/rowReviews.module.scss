@@ -1,0 +1,50 @@
+.container {
+  min-height: rem(234);
+  position: relative;
+}
+
+.track {
+  --marquee-item-width: 190px;
+  --marquee-duration: 40s;
+  --marquee-items: 4;
+
+  @for $i from 1 through 4 {
+    li:nth-of-type(#{$i}) {
+      --marquee-item-index: #{$i};
+    }
+  }
+
+  li {
+    --marquee-item-offset: max(
+      calc(var(--marquee-item-width) * var(--marquee-items)),
+      calc(100% + var(--marquee-item-width))
+    );
+    --marquee-delay: calc(
+      var(--marquee-duration) / var(--marquee-items) *
+        (var(--marquee-items) - var(--marquee-item-index)) * -1
+    );
+    position: absolute;
+    inset-inline-start: var(--marquee-item-offset);
+    transform: translateX(-50%);
+    animation: go linear var(--marquee-duration) var(--marquee-delay, 0s)
+      infinite;
+  }
+
+  @keyframes go {
+    to {
+      inset-inline-start: calc(var(--marquee-item-width) * -1);
+    }
+  }
+}
+
+.track.left {
+  li {
+    animation-direction: normal;
+  }
+}
+
+.track.right {
+  li {
+    animation-direction: reverse;
+  }
+}

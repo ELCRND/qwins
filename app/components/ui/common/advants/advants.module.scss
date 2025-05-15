@@ -1,0 +1,66 @@
+.container {
+  margin-bottom: rem(40);
+}
+
+.wrap {
+  display: flex;
+  gap: rem(20);
+}
+
+.title {
+  margin-bottom: rem(40);
+  font-size: rem(48);
+  font-weight: 600;
+  line-height: 110%;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.left,
+.right {
+  flex: 1;
+  & > div {
+    padding: rem(20);
+    border-radius: var(--border-r-m);
+    position: relative;
+
+    h3 {
+      margin-bottom: rem(20);
+      font-weight: 600;
+      font-size: rem(24);
+      line-height: 110%;
+      color: var(--color-white);
+      position: relative;
+      z-index: 1;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: rem(16);
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+}
+
+.right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "item1 item1"
+    "item2 item4"
+    "item3 item4";
+  gap: rem(20);
+
+  @for $i from 1 through 4 {
+    & > :nth-child(#{$i}) {
+      grid-area: item#{$i};
+    }
+  }
+}

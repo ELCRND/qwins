@@ -1,0 +1,40 @@
+.container {
+  margin-top: rem(40);
+}
+
+.wrap {
+  @include flex-center;
+  flex-direction: column;
+  min-height: rem(367);
+  border-radius: rem(55) rem(55) 0 0;
+  background: #090d10;
+}
+
+.title {
+  margin-bottom: rem(20);
+  font-weight: 600;
+  font-size: rem(48);
+  line-height: 110%;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.description {
+  margin-bottom: rem(40);
+  font-weight: 400;
+  font-size: rem(13);
+  line-height: 110%;
+  text-align: center;
+}
+
+.link {
+  width: rem(260);
+  height: rem(40);
+  margin-left: auto;
+  margin-right: auto;
+  gap: rem(11);
+
+  svg {
+    translate: 0 2%;
+  }
+}

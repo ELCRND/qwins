@@ -1,0 +1,105 @@
+// pages/Thanks.module.scss
+.container {
+  @include flex-center;
+  height: 100vh;
+}
+
+.card {
+  border-radius: var(--border-r-m);
+  padding: rem(32);
+  max-width: rem(800);
+  width: 100%;
+  text-align: center;
+  background: #0d141a;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    width: rem(437);
+    height: rem(421);
+    border-radius: 100%;
+    background-color: var(--color-blue);
+    opacity: 0.4;
+    filter: blur(300px);
+    position: absolute;
+    bottom: -44%;
+    left: -20%;
+    z-index: 0;
+  }
+}
+
+.title {
+  font-size: rem(28);
+  color: var(--color-white);
+  margin-bottom: rem(16);
+}
+
+.message {
+  font-size: rem(18);
+  color: var(--color-white);
+  margin-bottom: rem(32);
+}
+
+.subtitle {
+  font-size: rem(20);
+  color: var(--color-white);
+  margin: rem(24) 0 rem(16);
+}
+
+.textarea {
+  width: 100%;
+  height: rem(150);
+  margin-bottom: rem(16);
+  padding: rem(16);
+  border: 1px solid #ddd;
+  border-radius: var(--border-r-s);
+  font-size: rem(18);
+  resize: vertical;
+}
+
+.submitButton {
+  width: rem(180);
+  height: rem(40);
+  margin-bottom: rem(24);
+  margin-left: auto;
+  margin-right: auto;
+  font-size: rem(16);
+}
+
+.profileButton {
+  width: rem(180);
+  height: rem(40);
+  margin-left: auto;
+  margin-right: auto;
+  font-size: rem(16);
+}
+
+.ratingContainer {
+  display: flex;
+  justify-content: center;
+  gap: rem(8);
+  margin-bottom: rem(24);
+}
+
+.star {
+  font-size: rem(24);
+  color: #ccc;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 0 rem(4);
+
+  &:hover {
+    color: #ffc107;
+  }
+}
+
+.filled {
+  color: #ffc107;
+}
+
+.successMessage {
+  margin-bottom: rem(24);
+}

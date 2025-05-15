@@ -1,0 +1,29 @@
+.container {
+  padding: rem(40) rem(90);
+  position: relative;
+}
+
+.rangesFilters {
+  margin-bottom: rem(24);
+  display: flex;
+  gap: rem(40);
+}
+
+.checkboxesInputs {
+  display: flex;
+  gap: rem(40);
+}
+
+.searchBtn {
+  width: rem(200);
+  height: rem(42);
+  position: absolute;
+  bottom: 0;
+  right: rem(90);
+
+  &:disabled {
+    opacity: 0.6;
+    box-shadow: none;
+    cursor: auto;
+  }
+}

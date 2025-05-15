@@ -1,0 +1,60 @@
+.container {
+  position: absolute;
+  top: rem(12);
+  right: rem(4);
+  z-index: 5;
+  //   background-color: red;
+
+  button {
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+.btn {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: rem(12);
+  display: block;
+
+  &.open {
+    transition: 0.2s;
+
+    opacity: 0.4;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.actions {
+  padding: rem(8);
+  border-radius: rem(5);
+  background-color: #0b1014;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(6);
+  scale: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  transform-origin: top;
+
+  button {
+    transition: 0.2s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &.open {
+    scale: 1;
+  }
+}
+
+.favorite {
+  svg {
+    filter: drop-shadow(1px 2px rgb(219, 121, 9));
+  }
+}

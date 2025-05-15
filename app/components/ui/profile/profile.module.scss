@@ -1,0 +1,137 @@
+.container {
+  height: 100vh;
+  padding-top: rem(100);
+}
+
+.profileCard {
+  background: #0b1720;
+  border-radius: var(--border-r-s);
+  box-shadow: 0 10px rem(55) 10px rgba(0, 130, 251, 0.16);
+  overflow: hidden;
+}
+
+/* Заголовок */
+.profileHeader {
+  background: var(--color-blue);
+  padding: rem(20);
+  color: var(--color-white);
+}
+
+.profileTitle {
+  font-size: rem(24);
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.profileEmail {
+  margin: 0;
+  color: #e5e7eb;
+  font-size: rem(16);
+}
+
+.tabsContainer {
+  display: flex;
+  border-bottom: rem(1) solid #e5e7eb;
+}
+
+.tabContent {
+  padding: rem(20);
+  min-height: rem(250);
+}
+
+.logoutContainer {
+  padding: rem(20);
+  border-top: rem(1) solid #e5e7eb;
+}
+
+.logoutButton {
+  width: 100%;
+  padding: rem(10) rem(16);
+  background: #182833;
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-r-s);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(8);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.logoutButton:hover {
+  background: #b91c1c;
+}
+
+.logoutIcon {
+  width: rem(18);
+  height: rem(18);
+}
+
+.loadingContainer {
+  padding-top: rem(100);
+}
+
+.loadingPulse {
+  height: rem(20);
+  background: #e5e7eb;
+  border-radius: var(--border-r-s);
+  margin-bottom: rem(12);
+  animation: pulse 1.5s infinite;
+}
+
+.loadingPulse:nth-child(1) {
+  width: 40%;
+}
+
+.loadingPulse:nth-child(2) {
+  width: 60%;
+}
+
+.loadingPulse:nth-child(3) {
+  width: 100%;
+  height: rem(100);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.errorContainer {
+  max-width: rem(600);
+  margin: 0 auto;
+  padding: rem(20);
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  border-radius: var(--border-r-s);
+  text-align: center;
+}
+
+.errorTitle {
+  font-size: rem(18);
+  color: #b91c1c;
+}
+
+.errorText {
+  color: #7f1d1d;
+}
+
+.errorButton {
+  padding: rem(8) rem(16);
+  background: #b91c1c;
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-r-s);
+  cursor: pointer;
+}
+
+.errorButton:hover {
+  background: #991b1b;
+}

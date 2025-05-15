@@ -1,0 +1,42 @@
+.reviews {
+  padding-top: rem(114);
+  padding-bottom: rem(113);
+  background: var(--reviews-bg);
+  position: relative;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  margin-bottom: rem(100);
+  font-weight: 600;
+  font-size: rem(48);
+  line-height: 110%;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.wrap {
+  min-height: rem(520);
+  padding-top: rem(20);
+  padding-bottom: rem(20);
+  border-radius: var(--border-r-m);
+  background: #0d1217;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+}
+
+.bg {
+  position: absolute;
+  bottom: 0;
+  left: rem(-5);
+  z-index: 0;
+  object-fit: contain;
+  width: 100.67%;
+  height: 67%;
+}

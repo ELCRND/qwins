@@ -49,21 +49,12 @@
   }
 
   &:hover {
-    width: min(rem(180), 100%);
-    height: rem(220);
-
-    &::before {
-      aspect-ratio: 1 / 1;
-    }
-
     svg path {
-      fill: var(--color-blue);
+      fill: var(--color-blue-hover);
     }
 
     p {
-      max-width: rem(150);
-      color: var(--color-blue);
-      font-size: rem(16);
+      color: var(--color-blue-hover);
     }
   }
 }
@@ -77,12 +68,12 @@
   }
 
   svg path {
-    fill: var(--color-blue-hover);
+    fill: var(--color-blue);
   }
 
   p {
     max-width: rem(140);
-    color: var(--color-blue-hover);
+    color: var(--color-blue);
     font-size: rem(16);
   }
 }

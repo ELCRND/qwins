@@ -1,0 +1,107 @@
+.login {
+  @include flex-center;
+  height: 100vh;
+  background: linear-gradient(
+      225deg,
+      rgba(12, 25, 34, 0.9) 0%,
+      rgba(13, 20, 25, 0.9) 48.08%,
+      rgba(12, 25, 34, 0.9) 100%
+    ),
+    linear-gradient(
+      225deg,
+      rgba(13, 20, 25, 0.9) 0%,
+      rgba(12, 25, 34, 0.9) 49.52%,
+      rgba(13, 20, 25, 0.9) 99.04%
+    );
+}
+
+.wrap {
+  @include flex-center;
+  flex-direction: column;
+  padding: rem(40);
+  border-radius: var(--border-r-m);
+  background: rgba(19, 128, 206, 0.05);
+  box-shadow: 0 0 50px 10px rgba(48, 155, 255, 0.26);
+}
+
+.title {
+  margin-bottom: rem(20);
+  font-size: rem(32);
+  color: var(--color-white);
+}
+
+.error {
+  color: rgb(211, 94, 94);
+  font-size: rem(12);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+
+  button {
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}
+
+.email,
+.password {
+  display: grid;
+  gap: rem(8);
+  color: var(--color-white);
+
+  input {
+    width: rem(300);
+    padding: rem(10);
+    border-radius: var(--border-r-s);
+    border: none;
+    background-color: #0b1014;
+  }
+}
+
+.submit {
+  margin-top: rem(10);
+  height: rem(40);
+}
+
+.togglerForm {
+  margin-top: rem(20);
+
+  button {
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+// ... существующие стили
+
+.oauthButtons {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: #666;
+  font-size: 14px;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+  }
+
+  &::before {
+    margin-right: 10px;
+  }
+
+  &::after {
+    margin-left: 10px;
+  }
+}

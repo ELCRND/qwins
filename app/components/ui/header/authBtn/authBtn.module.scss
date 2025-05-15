@@ -1,0 +1,21 @@
+.authBtn {
+  padding: rem(12) rem(22);
+  border-radius: var(--border-r-s);
+  box-shadow: 0 0 17px 0 rgba(0, 130, 251, 0.46);
+  background: var(--color-blue);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: rem(13);
+  color: var(--color-white);
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:not(.disabled):hover {
+    background-color: var(--color-blue-hover);
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    box-shadow: 0 0 5px 0 rgba(0, 130, 251, 0.46);
+  }
+}

@@ -1,0 +1,39 @@
+.header {
+  width: 100%;
+  padding-top: rem(11);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 19;
+}
+
+.wrap {
+  padding-left: rem(15);
+  padding-right: rem(15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(10);
+}
+
+.navigation {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: rem(62);
+
+  ul {
+    display: flex;
+    gap: rem(20);
+
+    a {
+      font-weight: 400;
+      font-size: rem(13);
+      color: var(--color-white);
+      transition: 0.2s;
+
+      &:hover {
+        color: var(--color-blue);
+      }
+    }
+  }
+}

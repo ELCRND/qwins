@@ -1,0 +1,26 @@
+.container {
+  flex: 0 1 100%;
+}
+
+.title {
+  margin-bottom: rem(18);
+  font-weight: 400;
+  font-size: rem(20);
+  color: #3e4750;
+}
+
+.list {
+  display: grid;
+  gap: rem(8);
+
+  a {
+    font-weight: 400;
+    font-size: rem(16);
+    color: #939faa;
+    transition: 0.2;
+
+    &:hover {
+      color: var(--color-blue-hover);
+    }
+  }
+}

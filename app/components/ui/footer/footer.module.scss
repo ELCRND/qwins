@@ -1,0 +1,50 @@
+.footer {
+  padding-top: rem(39);
+  padding-bottom: rem(45);
+  background: #11171b;
+  position: relative;
+  z-index: 2;
+}
+
+.top {
+  margin-bottom: rem(40);
+  padding-bottom: rem(38);
+  border-bottom: rem(1) solid #22272c;
+  display: flex;
+  gap: rem(20);
+}
+
+.logo {
+  margin-bottom: rem(14);
+}
+
+.legal {
+  padding-left: rem(3);
+  display: flex;
+  gap: rem(21);
+
+  a {
+    font-weight: 400;
+    font-size: rem(13);
+    color: #3e4750;
+    transition: 0.2;
+
+    &:hover {
+      color: var(--color-blue-hover);
+    }
+  }
+}
+
+.copyright {
+  margin-bottom: rem(20);
+  margin-right: auto;
+  font-weight: 400;
+  font-size: rem(13);
+  color: #3e4750;
+}
+
+.payments {
+  display: flex;
+  align-items: center;
+  gap: rem(11);
+}
