@@ -17,6 +17,9 @@ export const authService = {
 
   async logout() {
     const res = await fetch(`${SERVER_URL}/auth/logout`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
       credentials: "include",
     });
     if (!res.ok) await this._handleErrors(res);
@@ -25,6 +28,9 @@ export const authService = {
 
   async getProfile() {
     const res = await fetch(`${SERVER_URL}/auth/profile`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
       credentials: "include",
     });
     if (!res.ok) return null;
