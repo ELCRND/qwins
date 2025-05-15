@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 export default function middleware(req: NextRequest) {
   const { url, cookies } = req;
 
+  console.log(cookies);
+
   const session =
     cookies.get("access_token") || cookies.get("refresh_token") || null;
 

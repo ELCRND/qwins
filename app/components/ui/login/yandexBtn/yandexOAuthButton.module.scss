@@ -31,5 +31,9 @@
     &:hover {
       background-color: #e03615;
     }
+
+    &:disabled {
+      opacity: 0.5;
+    }
   }
 }
