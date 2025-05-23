@@ -1,10 +1,9 @@
 import { memo } from "react";
 import Image from "next/image";
 
-import { ProductsType } from "@/app/types";
-
 import styles from "./serverCard.module.scss";
 import Tooltip from "../../tolltip/Tooltip";
+import { Server } from "@/lib/mockServers";
 
 function getImagePath(type: string, price: number) {
   if (type === "vps") {
@@ -30,7 +29,7 @@ function getImageSize(type: string) {
   return { width: 140, height: 152 };
 }
 
-type Props = ProductsType & {
+type Props = Server & {
   type: string;
   isAuth: boolean;
   isFavorite: boolean;

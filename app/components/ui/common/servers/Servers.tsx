@@ -10,8 +10,9 @@ import { useFilterProducts } from "@/app/hooks/useFilterProducts";
 import { ProductsType } from "@/app/types";
 
 import styles from "./servers.module.scss";
+import { Server } from "@/lib/mockServers";
 
-const Servers = ({ products }: { products: ProductsType[] }) => {
+const Servers = ({ products }: { products: Server[] }) => {
   const searchParans = useSearchParams();
   const [filteredProducts, setFilteredProducts] = useState(products);
   const { isLoading, getProductsByFilter } = useFilterProducts();

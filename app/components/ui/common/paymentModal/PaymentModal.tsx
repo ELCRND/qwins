@@ -3,13 +3,12 @@ import { ordersService } from "@/app/services/orders";
 
 import { useAuth } from "@/app/store/auth-store";
 
-import { ProductsType } from "@/app/types";
-
 import styles from "./paymentModal.module.scss";
 import { toast } from "sonner";
+import { Server } from "@/lib/mockServers";
 
 type Props = {
-  product: ProductsType;
+  product: Server;
   onClose: () => void;
 };
 

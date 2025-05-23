@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { FixedSizeGrid as Grid } from "react-window";
 import ServerCard from "../serverCard/ServerCard";
-import { ProductsType } from "@/app/types";
 import styles from "./products.module.scss";
 import { usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
 import { useAuth } from "@/app/store/auth-store";
+import { Server } from "@/lib/mockServers";
 
 const PaymentModal = dynamic(
   () => import("@/app/components/ui/common/paymentModal/PaymentModal"),
@@ -14,16 +14,14 @@ const PaymentModal = dynamic(
   }
 );
 
-const Products = ({ data }: { data: ProductsType[] }) => {
+const Products = ({ data }: { data: Server[] }) => {
   const { isAuth, user } = useAuth();
   const isFavorite = (id: string) => {
     return !!user?.Favorite[0].servers.find((el) => el.id === id);
   };
 
   const path = usePathname().replace(/\W/g, "");
-  const [selectedProduct, setSelectedProduct] = useState<ProductsType | null>(
-    null
-  );
+  const [selectedProduct, setSelectedProduct] = useState<Server | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const cols = 4;
@@ -32,7 +30,7 @@ const Products = ({ data }: { data: ProductsType[] }) => {
   const itemHeight = 453;
   const containerHeight = 2 * itemHeight;
 
-  const handleOrderClick = (product: ProductsType) => {
+  const handleOrderClick = (product: Server) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
   };

@@ -35,7 +35,7 @@ export type ProductsType = {
   isAvailable: boolean;
   cpuManufacturer: keyof typeof CpuManufacturer;
   cpuModel: keyof typeof CpuModels;
-  cpuCores?: number;
+  cpuCores: number;
   ramGb: number;
   diskGb: number;
   diskType: keyof typeof DiskType;
@@ -43,7 +43,7 @@ export type ProductsType = {
   pricePerMonth: number;
 };
 
-enum CpuModels {
+export enum CpuModels {
   "Xeon E5-2678",
   "Core i9-13900K",
   "Xeon Platinum 8380",

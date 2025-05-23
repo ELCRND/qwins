@@ -29,7 +29,9 @@ const Header = () => {
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
         <div className={styles.wrap}>
-          <Logo type="gradient" />
+          <Link href={"/"}>
+            <Logo type="gradient" />
+          </Link>
 
           <nav className={styles.navigation}>
             <ul>

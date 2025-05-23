@@ -1,41 +1,73 @@
 import { useState } from "react";
-
 import { toast } from "sonner";
 
-import { ProductsType } from "../types";
+import { getMockServers, Server } from "@/lib/mockServers";
 
 export const useFilterProducts = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const getProductsByFilter = async (
     queryString: string
-  ): Promise<ProductsType[] | null> => {
+  ): Promise<Server[] | null> => {
     try {
       setIsLoading(true);
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/product-server?${queryString}`
-      );
 
-      if (!res.ok) {
-        const errorData = await res.json();
-        const errorMessages: string[] = Array.isArray(errorData.message)
-          ? errorData.message
-          : [errorData.message || "Произошла ошибка при загрузке данных"];
+      const params = new URLSearchParams(queryString);
+      const filters = {
+        isAvailable: params.get("isAvailable") === "true" ? true : undefined,
+        cpuManufacturer: params.get("cpuManufacturer") as
+          | "INTEL"
+          | "AMD"
+          | undefined,
+        cpuMinCores: params.get("cpuMinCores")
+          ? parseInt(params.get("cpuMinCores") as string)
+          : undefined,
+        cpuMaxCores: params.get("cpuMaxCores")
+          ? parseInt(params.get("cpuMaxCores") as string)
+          : undefined,
+        ramMinGb: params.get("ramMinGb")
+          ? parseInt(params.get("ramMinGb") as string)
+          : undefined,
+        ramMaxGb: params.get("ramMaxGb")
+          ? parseInt(params.get("ramMaxGb") as string)
+          : undefined,
+        diskMinGb: params.get("diskMinGb")
+          ? parseInt(params.get("diskMinGb") as string)
+          : undefined,
+        diskMaxGb: params.get("diskMaxGb")
+          ? parseInt(params.get("diskMaxGb") as string)
+          : undefined,
+        diskType: params.get("diskType") as "SSD" | "HDD" | "NVMe" | undefined,
+        location: params.get("location") as
+          | "GERMANY"
+          | "FINLAND"
+          | "RUSSIA"
+          | "NETHERLANDS"
+          | "ESTONIA"
+          | undefined,
+        minPrice: params.get("minPrice")
+          ? parseFloat(params.get("minPrice") as string)
+          : undefined,
+        maxPrice: params.get("maxPrice")
+          ? parseFloat(params.get("maxPrice") as string)
+          : undefined,
+        sortByPrice: params.get("sortByPrice") as "asc" | "desc" | undefined,
+        take: params.get("take")
+          ? parseInt(params.get("take") as string)
+          : undefined,
+      };
 
-        errorMessages.forEach((msg) => toast.error(msg));
-        setIsLoading(false);
+      await new Promise((resolve) => setTimeout(resolve, 300));
 
-        throw new Error(errorMessages.join("\n"));
-      }
+      // Получаем отфильтрованные данные
+      const filteredData = getMockServers(filters);
 
-      const data = await res.json();
       setIsLoading(false);
-
-      return data;
+      return filteredData;
     } catch (error) {
       console.error(error);
+      toast.error("Произошла ошибка при загрузке данных");
       setIsLoading(false);
-
       return null;
     }
   };

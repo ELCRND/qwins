@@ -7,7 +7,6 @@ import VpsAdvant from "../components/ui/vpsAdvants/VpsAdvants";
 import SupportBanner from "../components/ui/common/supportBanner/SupportBanner";
 import Servers from "../components/ui/common/servers/Servers";
 
-import { ProductsType } from "../types";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
@@ -15,23 +14,20 @@ export const metadata: Metadata = {
   description: "Мощные VPS под любые задачи",
 };
 
-const fetchProducts = async (): Promise<ProductsType[]> => {
+async function fetchProducts() {
   try {
-    const res = await fetch(`http://localhost:5000/product-server?take=8`, {
-      cache: "force-cache",
-    });
-
-    if (!res.ok) {
-      throw new Error(res.status.toString());
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_SITE_URL}/api/product-server`
+    );
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
     }
-
-    const data = await res.json();
+    const data = await response.json();
     return data;
-  } catch (error) {
-    console.error(error);
-    return [];
+  } catch (e) {
+    console.log(e);
   }
-};
+}
 
 export default async function VpsPage() {
   const products = await fetchProducts();
@@ -42,7 +38,7 @@ export default async function VpsPage() {
       <VpsBanner />
       <VpsAdvant />
       <Suspense>
-        <Servers products={products.slice()} />
+        <Servers products={products || []} />
       </Suspense>
       <SupportBanner />
       <Footer />
