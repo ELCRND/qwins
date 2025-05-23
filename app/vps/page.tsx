@@ -16,9 +16,7 @@ export const metadata: Metadata = {
 
 async function fetchProducts() {
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_SITE_URL}/api/product-server`
-    );
+    const response = await fetch(`${process.env.SITE_URL}/api/product-server`);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
